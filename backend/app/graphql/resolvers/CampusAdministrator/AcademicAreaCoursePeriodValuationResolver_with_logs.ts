@@ -16,8 +16,6 @@ import { AcademicPeriod } from '../../models/SchoolAdministrator/AcademicPeriod'
 import { PerformanceLevel } from '../../models/SchoolAdministrator/PerformanceLevel';
 import { ConnectionArgs } from '../../pagination/relaySpecs';
 
-console.log("Area del Curso x Periodo EvaluativoR");
-
 @Resolver(AcademicAreaCoursePeriodValuation)
 export class AcademicAreaCoursePeriodValuationResolver {
     @InjectRepository(AcademicAreaCoursePeriodValuation)
@@ -220,7 +218,7 @@ export class AcademicAreaCoursePeriodValuationResolver {
         let data = await this.repository.findOneBy(id);
         let result = await this.repository.deleteOne({ _id: new ObjectId(id) });
         console.log(`Delete Result: ${JSON.stringify(result)}`);
-        return result?.result?.ok === 1 ?? true;
+        return result?.result?.ok === 1;
     }
 
     @FieldResolver((_type) => User, { nullable: true })

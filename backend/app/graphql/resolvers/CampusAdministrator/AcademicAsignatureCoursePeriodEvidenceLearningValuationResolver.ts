@@ -11,6 +11,8 @@ import { Campus } from '../../models/GeneralAdministrator/Campus';
 import { User } from '../../models/GeneralAdministrator/User';
 import { ConnectionArgs } from '../../pagination/relaySpecs';
 
+console.log("aSIGNATURA PERIOD EVIDENCIA SIN LOG");
+
 @Resolver(AcademicAsignatureCoursePeriodEvidenceLearningValuation)
 export class AcademicAsignatureCoursePeriodEvidenceLearningValuationResolver {
     @InjectRepository(AcademicAsignatureCoursePeriodEvidenceLearningValuation)
