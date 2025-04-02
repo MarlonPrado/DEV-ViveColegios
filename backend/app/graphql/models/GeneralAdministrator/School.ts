@@ -58,7 +58,7 @@ export class School extends IModelData {
   @Field({ nullable: true })
   @Column({ nullable: true })
   imgSecretarySignature?: string;
-}
+}   
 
 @ObjectType()
 export class SchoolEdge extends EdgeType('School', School) { }

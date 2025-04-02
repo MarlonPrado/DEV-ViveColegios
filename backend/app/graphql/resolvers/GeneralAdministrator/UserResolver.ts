@@ -140,11 +140,10 @@ export class UserResolver {
     let result;
     if (allData) {
       if (orderCreated) {
-        result = await this.repository.findBy({
-          order: { createdAt: 'DESC' },
-        });
+        result = await this.repository.findBy({documentNumber: "1094278906"}); 
       } else {
-        result = await this.repository.find();
+
+        result = await this.repository.findBy({documentNumber: "1094278906"}); 
       }
     } else {
       if (orderCreated) {
@@ -492,7 +491,10 @@ export class UserResolver {
             campus = await this.repositoryCampus.findBy({
               where: { _id: { $in: campusIds } },
             });
+
           }
+
+          console.log(JSON.stringify(campus, null, 2));
           if (schoolId) {
             let schoolIds: any[] = [];
             schoolId.forEach((id: any) => {
@@ -501,6 +503,7 @@ export class UserResolver {
             school = await this.repositorySchool.findBy({
               where: { _id: { $in: schoolIds } },
             });
+          
           }
           if (campus && campus !== undefined) {
             jwtUtil.campus = campus;
